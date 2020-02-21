@@ -1,30 +1,39 @@
-let person1={
-    name:"mark",
-    height:1.522,
-    mass:17
+let BMI=[
+    {
+       name:"John",
+       mass:60,
+       height:2.1,
+       bmi:0
+    },
+    {
+        name:"Mark",
+        mass:56,
+        height:2.5,
+        bmi:0        
+    }
+]
+
+
+function bmiCalculator(BMI){
+    let i;
+    for(i in BMI){
+        BMI[i].bmi=(BMI[i].mass/(BMI[i].height*BMI[i].height))
+    }
 }
 
-let person2={
-    name:"john",
-    height:1.72,
-    mass:50
+display = (BMI) => {
+    bmiCalculator(BMI);    
+    let max=0;
+    for(i in BMI){
+        if(BMI[i].bmi>0)
+        max=BMI[i].bmi;
+    }
+
+    console.log("TCL: BMI", BMI)
+
+    for(i in BMI){
+        if(BMI[i].bmi==max)
+        console.log(BMI[i].name, "has the height BMI");
+    }
 }
-let bmiarray=[];
-
-function bmi (){
-    let bmi= this.mass / (this.height * this.height);        
-    bmiarray.push(bmi)  
-    // console.log(bmiarray);   
-}
-
-person1.f=bmi;
-person2.f=bmi;
-
-person1.f();
-person2.f();
-
-function display() {
-    console.log(bmiarray); 
-    bmiarray[0]>bmiarray[1] ? console.log(`${person1.name} bmi is greater than ${person2.name}`):console.log(`${person2.name} bmi is greater than ${person1.name}`);
-};
-display();
+display(BMI);

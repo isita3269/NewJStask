@@ -12,8 +12,9 @@ let bill = [
 
 let billAmount = [];
 let totalBill =[];
-function getRestaurantBillValue(bill) {           
-    for (let i=0; i<bill.length; i+=1) {
+function getRestaurantBillValue(bill) {    
+    let i;       
+    for (i in bill) {
      billAmount.push(bill[i].restaurant);
     }
     console.log("TCL: getRestaurantBillValue -> billAmount", billAmount)    
