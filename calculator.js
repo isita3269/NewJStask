@@ -49,7 +49,6 @@ function billCalculator(ArrayOfTip) {
     })
 }
 
-
 display = () => {
     billCalculator(ArrayOfTip);
     console.log("TCL: billCalculator -> totalBill", totalBill)
